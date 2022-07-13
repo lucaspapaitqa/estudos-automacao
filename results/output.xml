@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.8.10 on linux)" generated="20220712 22:05:02.860" rpa="false" schemaversion="3">
+<suite id="s1" name="Aplicativo" source="/home/lucas/Downloads/formatacao/Quality Assurance/automacao/aplicativo">
+<suite id="s1-s1" name="Tests" source="/home/lucas/Downloads/formatacao/Quality Assurance/automacao/aplicativo/tests">
+<suite id="s1-s1-s1" name="Buttons" source="/home/lucas/Downloads/formatacao/Quality Assurance/automacao/aplicativo/tests/buttons.robot">
+<test id="s1-s1-s1-t1" name="Deve realizar um click simples" line="8">
+<kw name="Open Session" library="base" type="SETUP">
+<kw name="Set Appium Timeout" library="AppiumLibrary">
+<arg>5</arg>
+<doc>Sets the timeout in seconds used by various keywords.</doc>
+<status status="PASS" starttime="20220712 22:05:03.409" endtime="20220712 22:05:03.411"/>
+</kw>
+<kw name="Open Application" library="AppiumLibrary">
+<arg>http://localhost:4723/wd/hub</arg>
+<arg>automationName=UiAutomator2</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=Android Emulator</arg>
+<arg>app=${EXECDIR}/app/twp.apk</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="PASS" starttime="20220712 22:05:03.459" endtime="20220712 22:05:29.725"/>
+</kw>
+<kw name="Get Started" library="helpers">
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>${START}</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20220712 22:05:29.729" endtime="20220712 22:05:33.622"/>
+</kw>
+<kw name="Click Text" library="AppiumLibrary">
+<arg>${START}</arg>
+<doc>Click text identified by ``text``.</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20220712 22:05:34.577" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220712 22:05:33.626" endtime="20220712 22:05:34.584"/>
+</kw>
+<msg timestamp="20220712 22:05:34.587" level="FAIL">AttributeError: 'WebDriver' object has no attribute 'find_elements_by_xpath'</msg>
+<status status="FAIL" starttime="20220712 22:05:33.624" endtime="20220712 22:05:34.592"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${HAMBURGUER}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="NOT RUN" starttime="20220712 22:05:34.594" endtime="20220712 22:05:34.595"/>
+</kw>
+<status status="FAIL" starttime="20220712 22:05:29.726" endtime="20220712 22:05:34.598"/>
+</kw>
+<status status="FAIL" starttime="20220712 22:05:03.407" endtime="20220712 22:05:34.600"/>
+</kw>
+<kw name="Close Session" library="base" type="TEARDOWN">
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20220712 22:05:34.605" endtime="20220712 22:05:35.833"/>
+</kw>
+<status status="PASS" starttime="20220712 22:05:34.603" endtime="20220712 22:05:35.835"/>
+</kw>
+<tag>shot</tag>
+<status status="FAIL" starttime="20220712 22:05:03.402" endtime="20220712 22:05:35.836">Setup failed:
+AttributeError: 'WebDriver' object has no attribute 'find_elements_by_xpath'</status>
+</test>
+<status status="FAIL" starttime="20220712 22:05:02.933" endtime="20220712 22:05:35.840"/>
+</suite>
+<status status="FAIL" starttime="20220712 22:05:02.924" endtime="20220712 22:05:35.845"/>
+</suite>
+<status status="FAIL" starttime="20220712 22:05:02.868" endtime="20220712 22:05:35.851"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">shot</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Aplicativo">Aplicativo</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Tests">Aplicativo.Tests</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="Buttons">Aplicativo.Tests.Buttons</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

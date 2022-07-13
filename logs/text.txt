@@ -1,0 +1,39 @@
+Para executar o robot:
+robot -d (qual diretório de saída ) -> ./logs home.robot
+----------------------
+Ponto importanta checkpoints
+------------------------
+Set Appium Timeout  5 #Configuração de timeout padrão  -- Após o timeout, tabulando algum número, esse número vira o tempo de timeout
+-----------------------
+*** Keywords ***
+Open Session
+    Set Appium Timeout  5    #Configuração de timeout padrão  -- Após o timeout, tabulando algum número, esse número vira o tempo de timeout
+    Open Application    http://localhost:4723/wd/hub
+    ...                 automationName=UiAutomator2
+    ...                 platformName=Android
+    ...                 deviceName=Android Emulator
+    ...                 app=${EXECDIR}/app/twp.apk
+
+Close Session
+    Close Application
+
+incluindo Open Session após inicar o teste, ele irá exetucar o Keywords
+
+----------------------------------------
+Test Setup        Open Session - Iniciando sempre nos t estes
+Test Teardown     Close Session - FInalizando sempre os testes 
+
+-----------
+Emcapisulamento com Keywords
+------------
+Variaveis
+${NOME}     Lucas Papait ## Variavel simples
+@{CARROS}   Civic   Lancer  Chevette    Brasilia ## Lista de variaveis
+&{CARRO}    nome=Lancer     modeo=Evolution     ano=2020 ## Dicionario de dados pyton
+
+
+
+//android.widget.RadioButton[contains(@text, 'Python')]   Xpath
+
+
+   Element Attribute Should Match 
